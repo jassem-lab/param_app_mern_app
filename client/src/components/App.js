@@ -23,8 +23,8 @@ function App() {
           <Route path ="/products" exact component={Products}  />
           <Route path ="/about" exact component={About}  />
           <Route path ="/signin" exact component={Signin}  />
-          <Route path ="/signout" exact component={Signup}  />
-          <Route path ="*" component={NotFound} /> 
+          <Route path ="/signup" exact component={Signup}  />
+          <Route path ="*"  component={NotFound} /> 
         </Switch>
       </main>
     </>
