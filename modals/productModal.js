@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const productModal = mongoose.Schema(
+const productSchema = mongoose.Schema(
   {
     product_id: {
       type: String,
@@ -43,4 +43,4 @@ const productModal = mongoose.Schema(
     timestamp: true,
   }
 );
-module.exports = mongoose.model("product", productModal);
+module.exports = mongoose.model("product", productSchema);

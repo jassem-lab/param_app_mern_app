@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import isEmail from "validator/lib/isEmail";
+import isEmpty from "validator/lib/isEmpty";
+import { showErrorMsg, showSuccessMsg } from "../../components/helpers/message";
+import { showLoading } from "../../components/helpers/Loading";
 import "./Signup.css";
 
 const Signup = () => {
@@ -12,19 +16,42 @@ const Signup = () => {
     loading: false,
   });
 
-  const handleChange = (e) => {
-    e.preventDefault();
+  const { username, email, password, successMsg, errorMsg, loading } = newUser;
 
+  const handleChange = (e) => {
     setNewUser({
       ...newUser,
       [e.target.name]: e.target.value,
+      successMsg: "",
+      errorMsg: "",
     });
   };
 
-  const { username, email, password, successMsg, errorMsg, loading } = newUser;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Client Side validation
+    if (isEmpty(username) || isEmpty(email) || isEmpty(password)) {
+      setNewUser({
+        ...newUser,
+        errorMsg: "All fields are Required !",
+      });
+    } else if (!isEmail(email)) {
+      setNewUser({
+        ...newUser,
+        errorMsg: "invalid email",
+      });
+    } else {
+      // Success !
+      setNewUser({
+        ...newUser,
+        successMsg: "Validation success ! you are welcome  ",
+      });
+    }
+  };
 
   const ShowSignupForm = () => (
-    <form action="" className="signup__form">
+    <form action="" className="signup__form" onSubmit={handleSubmit}>
       <h2>Sign Up</h2>
       <br />
       <label for="name">Name</label>
@@ -68,7 +95,17 @@ const Signup = () => {
       </Link>
     </form>
   );
-  return <div className="">{ShowSignupForm()}</div>;
+  return (
+    <div className="SignupPage">
+      <div className="error__message">
+        {successMsg && showSuccessMsg(successMsg, username)}
+        {errorMsg && showErrorMsg(errorMsg)}
+        <div className="Loading__signup">{loading && showLoading()}</div>
+      </div>
+
+      {ShowSignupForm()}
+    </div>
+  );
 };
 
 export default Signup;

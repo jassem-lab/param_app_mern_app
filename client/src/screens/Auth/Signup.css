@@ -94,4 +94,13 @@
 .signup__form #button:hover {
     background-position:-400px;  
 } 
-  
+
+.error__message{
+	margin :  30px  ; 
+	text-align: center;
+
+}
+.Loading__signup{
+	text-align: center;
+	padding-top : 30px !important ; 
+}

@@ -13,6 +13,7 @@ function NavigationBar() {
     &:link,
     &:active {
       text-decoration: none;
+     
     }
   `;
   return (
@@ -20,36 +21,36 @@ function NavigationBar() {
       <Navbar bg="light" variant="light" collapseOnSelect expand="lg" sticky>
         <Navbar.Brand>
           {" "}
-          <StyledLink to="/">Restaurant</StyledLink>{" "}
+          <StyledLink to="/" style={{'color' : '#fbd75c' }}>Restaurant</StyledLink>{" "}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link>
               {" "}
-              <StyledLink to="/">Home</StyledLink>{" "}
+              <StyledLink to="/" style={{'color' : 'orange' }}>Home</StyledLink>{" "}
             </Nav.Link>
             <Nav.Link>
               {" "}
-              <StyledLink to="/products">Products</StyledLink>{" "}
+              <StyledLink to="/products" style={{'color' : 'orange' }}>Products</StyledLink>{" "}
             </Nav.Link>
             <Nav.Link>
-              <StyledLink to="/about">About</StyledLink>{" "}
+              <StyledLink to="/about" style={{'color' : 'orange' }}>About</StyledLink>{" "}
             </Nav.Link>
           </Nav>
 
           <Form inline className="mr-auto">
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-dark">Search</Button>
+            <Button variant="outline-dark" style={{'color' : '#fbd75c' }}>Search</Button>
           </Form>
           <Nav className="" inline>
             <Nav.Link>
               {" "}
-              <StyledLink to="/signin">Sign In</StyledLink>{" "}
+              <StyledLink to="/signin" style={{'color' : 'orange' }}>Sign In</StyledLink>{" "}
             </Nav.Link>
             <Nav.Link>
               {" "}
-              <StyledLink to="/signup">Sign Up</StyledLink>{" "}
+              <StyledLink to="/signup" style={{'color' : 'orange' }}>Sign Up</StyledLink>{" "}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
