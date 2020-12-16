@@ -21,7 +21,7 @@ function NavigationBar() {
       <Navbar bg="light" variant="light" collapseOnSelect expand="lg" sticky>
         <Navbar.Brand>
           {" "}
-          <StyledLink to="/" style={{'color' : '#fbd75c' }}>Restaurant</StyledLink>{" "}
+          <StyledLink to="/" style={{'color' : '#fbd75c' }}>Shop name</StyledLink>{" "}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

@@ -20,6 +20,13 @@ function Signin() {
     });
   };
 
+  const FormInput = (props) => (
+    <div class="row">
+      <label>{props.description}</label>
+      <input type={props.type} placeholder={props.placeholder} />
+    </div>
+  );
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -43,26 +50,36 @@ function Signin() {
   };
 
   return (
-    <div>
+    <div className="logCtrl">
       <form action="" className="signup__form" onSubmit={handleSubmit}>
-        <h2>Log In</h2>
-        <br />
+      <div id="loginform">
+          <div title="Login">
+            <h2 id="headerTitle">Signup</h2>
+          </div>
+        
+          <FormInput
+            description="Email"
+            placeholder="Enter your Email"
+            type="email"
+            value={email}
+            name="email"
+            onChange={handleChange}
+          />
+          <FormInput
+            description="Password"
+            placeholder="Enter your Password"
+            type="password"
+            value={password}
+            name="password"
+            onChange={handleChange}
+          />
 
-        <br />
-        <label for="email">Email</label>
-        <br />
-        <input id="email" type="email" name="email" onChange={handleChange} />
-        <br />
-        <label for="password">Password</label>
-        <br />
-        <input
-          id="password"
-          type="password"
-          name="password"
-          onChange={handleChange}
-        />
-        <br />
-        <input id="button" type="submit" value="Connect" />
+          <div id="button" class="row">
+            <button id="button" type="submit" value="Connect">Sign in</button>
+          </div>
+        </div>
+
+       
         <br />
       </form>
     </div>

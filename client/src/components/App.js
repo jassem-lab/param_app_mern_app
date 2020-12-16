@@ -8,7 +8,7 @@ import Home from '../screens/Home/Home'
 import About from '../screens/About/About'
 import Products from '../screens/Products/Products'
 import Signin from '../screens/Auth/Signin'
-import Signup from '../screens/Auth/Signup'
+import Signup from '../screens/Auth/signup2'
 import NotFound from '../screens/NotFound/NotFound' 
 
 
