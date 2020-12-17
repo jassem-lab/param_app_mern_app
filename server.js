@@ -3,6 +3,8 @@ const app = express();
 const connectDB = require("./database/db");
 const cors = require("cors");
 const morgan = require("morgan");
+const authCtrl = require("./controllers/authCtrl");
+
 // Connection to Database
 
 connectDB();
@@ -12,8 +14,13 @@ connectDB();
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
+app.use("/api/auth", authCtrl);
 
 // Routes ( API )
+// Routers Tests :
+app.get("/", (req, res) => {
+  // res.send('hello from server !!')
+});
 
 // Production
 

@@ -73,7 +73,7 @@ const Signup = () => {
   };
 
   const FormInput = (props) => (
-    <div class="row">
+    <div className="row">
       <label>{props.description}</label>
       <input type={props.type} placeholder={props.placeholder} />
     </div>
@@ -111,16 +111,16 @@ const Signup = () => {
             onChange={handleChange}
           />
 
-          <div id="button" class="row">
+          <div id="button" className="row">
             <button>Sign up</button>
           </div>
         </div>
         <div id="alternativeLogin">
-          <label>Or sign in with:</label>
+          <label>Or Visit us on:</label>
           <div id="iconGroup">
-            <a href="#" id="facebookIcon"></a>
-            <a href="#" id="twitterIcon"></a>
-            <a href="#" id="googleIcon"></a>
+            <a href="facebook.com" id="facebookIcon"></a>
+            <a href="twitter.com" id="twitterIcon"></a>
+            <a href="google.com" id="googleIcon"></a>
           </div>
           <Link
             to="/signin"

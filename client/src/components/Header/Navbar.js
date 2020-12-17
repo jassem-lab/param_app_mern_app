@@ -18,7 +18,7 @@ function NavigationBar() {
   `;
   return (
     <>
-      <Navbar bg="light" variant="light" collapseOnSelect expand="lg" sticky>
+      <Navbar bg="" variant="" collapseOnSelect expand="lg" sticky>
         <Navbar.Brand>
           {" "}
           <StyledLink to="/" style={{'color' : '#fbd75c' }}>Shop name</StyledLink>{" "}
